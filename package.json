@@ -44,6 +44,6 @@
     "google-closure-compiler": "20200224.0.0"    
   },
   "publishConfig": {
-    "@atomicra:registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com/"
   }
 }
