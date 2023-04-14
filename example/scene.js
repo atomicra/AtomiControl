@@ -1,7 +1,7 @@
 import * as THREE from "three";
 
 import { ArcballControls } from "/three/examples/jsm/controls/ArcballControls.js";
-import { AtomiControl } from "./js/AtomiControl.js";
+import { AtomiControl } from "../build/atomicontrol";
 import Stats from "/stats.js/src/Stats.js";
 
 class Gl {
