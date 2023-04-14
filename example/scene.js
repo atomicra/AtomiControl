@@ -46,7 +46,7 @@ class Gl {
     this.control.wMax = 35;	//maximum angular velocity allowed
 
     let g = new THREE.BoxGeometry(0.5, 0.5, 0.5);
-    let m = new THREE.MeshPhongMaterial({ wireframe: false, map: texture});
+    let m = new THREE.MeshPhongMaterial({ map: texture });
 
     this.cube = new THREE.Mesh(g, m);
     this.scene.add(this.cube);
