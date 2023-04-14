@@ -11,7 +11,7 @@ import { AtomiControl } from "atomicontrol/build/atomicontrol";
     this.control = new ArcballControls(this.camera, this.domElement);
     ...
     let g = new THREE.BoxGeometry(0.5, 0.5, 0.5);
-    let m = new THREE.MeshPhongMaterial({ wireframe: false, map: texture, transparent: true, depthTest: false, depthWrite: false });
+    let m = new THREE.MeshPhongMaterial({ wireframe: false, map: texture });
 
     this.cube = new THREE.Mesh(g, m);
     this.scene.add(this.cube);
