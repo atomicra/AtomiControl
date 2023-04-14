@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>3D scene</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <link href="./favicon.ico" />
+  <style>
+    #three {
+      position: fixed;
+      bottom: 0px;
+      right: 0px;
+      top: 0px;
+      left: 0px;
+      background: linear-gradient(to top, #9c9c9c 0%, #173048);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="three"></div>
+  <script async src="https://unpkg.com/es-module-shims@1.7.1/dist/es-module-shims.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "/three/build/three.module.js",
+        "stats": "/stats.js/src/Stats.js"
+      }
+    }
+  </script>
+  <script type="module" src="./scene.js"></script>
+</body>
+
+</html>

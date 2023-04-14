@@ -1,0 +1,39 @@
+{
+  "name": "atomicontrol",
+  "version": "1.0.0",
+  "description": "Position and Transform controls for Three Js",
+  "main": "build/atomicontrol.js",
+  "directories": {
+    "example": "example"
+  },
+  "files": [
+    "build",
+    "src"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "build-closure": "rollup -c && google-closure-compiler --language_in=ECMASCRIPT6_STRICT --js build/atomicontrol.js --js_output_file build/atomicontrol.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atomicra/AtomiControl.git"
+  },
+  "keywords": [
+    "three",
+    "webGL",
+    "controls"
+  ], 
+  "author": "atomicra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atomicra/AtomiControl/issues"
+  },
+  "homepage": "https://github.com/atomicra/AtomiControl#readme",
+  "devDependencies": {
+    "stats.js": "^0.17.0",
+    "three": "^0.151.3",
+    "rollup": "^2.3.2",
+    "google-closure-compiler": "20200224.0.0"    
+  }
+}
