@@ -1,5 +1,5 @@
 # AtomiControl
-three js Position / Transformation Controls
+Position / Transformation Controls for Thee JS
 
 # Demo
 ![](https://github.com/atomicra/AtomiControl/blob/main/AtomiControlSmall.gif)
