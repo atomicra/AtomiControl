@@ -1,10 +1,10 @@
 export default {
-	input: 'src/AtomiControl.js',
+	input: 'src/AtomiControls.js',
 	output: [
 		{
 			format: 'es',
 			name: 'AtomiControl',
-			file: 'build/atomicontrol.js',
+			file: 'build/atomicontrols.js',
 			indent: '\t'
 		}
 	]

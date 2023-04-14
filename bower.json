@@ -1,8 +1,8 @@
 {
-	"name": "atomicontrol",
+	"name": "atomicontrols",
 	"homepage": "https://github.com/atomicra/AtomiControl",
-	"description": "Position and Transform controls for Three Js",
-	"main": "build/atomicontrol.js",
+	"description": "Compact and Multiply Transform Controls for Three Js",
+	"main": "build/atomicontrols.js",
 	"keywords": [
         "three",
         "webGL",
@@ -12,6 +12,7 @@
 	],
 	"license": "MIT",
 	"ignore": [
+		"bin",
 		"example",
 		"LICENSE"
 	]

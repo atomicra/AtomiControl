@@ -1,0 +1,102 @@
+const app = require('./app');
+const asocket = require('./asocket');
+const http = require('http');
+const os = require('os');
+
+// ws
+// const ws = new require('ws');
+// const wss = new ws.Server({noServer: true});
+// const clients = new Set();
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  const port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP(S) server "error" event.
+ */
+
+function onError(error, port) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  const bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP(S) server "listening" event.
+ */
+
+function onListening(addr, extip) {
+  const bind = typeof addr === 'string'
+    ? `pipe ${addr}`
+    : `port ${addr.port}`;
+  if (typeof extip === "string" && extip.length > 0)
+    console.log(`server mode is ${process.env.NODE_ENV} listening on http://${extip}:${httpPort}`);
+  else
+    console.log(`server mode is ${process.env.NODE_ENV} listening on http://localhost:${httpPort}`);
+}
+
+function getExtIP() {
+  const ifaces = os.networkInterfaces();
+  let np = [];
+  for (let key in ifaces) {
+    if (Array.isArray(ifaces[key]))
+      np = np.concat(ifaces[key])
+  }
+  const ipv4ext = np.find(elem => {
+    try {
+      return (elem.family.toLocaleLowerCase() === 'ipv4' && elem.internal === false);
+    } catch (error) {
+      return false
+    }
+  });
+  try {
+    return ipv4ext.address;
+  } catch (error) {
+    return ``;
+  }
+}
+
+const httpPort = normalizePort(process.env.PORT || '8090');
+app.set('httpPort', httpPort);
+
+const httpServer = http.createServer(app);
+
+httpServer.listen(httpPort);
+httpServer.on('error', err => { onError(err, httpPort) });
+httpServer.on('listening', () => { onListening(httpServer.address(), getExtIP()) });
+httpServer.on('upgrade', asocket);

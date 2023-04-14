@@ -2,7 +2,7 @@
 Position / Transformation Controls for Three JS. More performance and small code size.
 
 # Demo
-![](https://github.com/atomicra/AtomiControl/blob/main/AtomiControlSmall.gif)
+![](https://github.com/atomicra/AtomiControl/blob/main/demo.gif)
 
 # Usage
 ```...

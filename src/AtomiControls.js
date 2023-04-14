@@ -1,5 +1,5 @@
 import { CylinderGeometry, Group, Mesh, MeshStandardMaterial, Object3D, Plane, Quaternion, Raycaster, TorusGeometry, Vector2, Vector3 } from "three";
-import { mergeBufferGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
+import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
 
 // events
 const pointerUp = "pointerup";
@@ -24,7 +24,7 @@ const getArrow = (radius, axis, angle, plane) => {
   arrow.translate(0, aHei * 1.5, 0);
   const base = new CylinderGeometry(aRad / 5, aRad / 5, aHei, aSeg);
   base.translate(0, aHei / 2, 0);
-  const geometry = mergeBufferGeometries([base, arrow]);
+  const geometry = mergeGeometries([base, arrow]);
   geometry.translate(0, radius || 0, 0);
 
   const material = new MeshStandardMaterial({
@@ -345,7 +345,7 @@ class ControlEvents extends Object3D {
 
 }
 
-class AtomiControl extends ControlEvents {
+class AtomiControls extends ControlEvents {
   constructor(camera, renderer, radius) {
     super(camera, renderer);
     const q = new Quaternion();
@@ -400,4 +400,4 @@ class AtomiControl extends ControlEvents {
 
 }
 
-export { AtomiControl };
+export { AtomiControls };
