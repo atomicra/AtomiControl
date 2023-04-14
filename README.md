@@ -1,5 +1,6 @@
 # AtomiControl
 three js Position / Transformation Controls
+![animation](https://github.com/atomicra/AtomiControl/blob/main/AtomiControlSmall.gif)
 # Usage
 ```...
 import { AtomiControl } from "atomicontrol/build/atomicontrol";
