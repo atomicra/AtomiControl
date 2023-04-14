@@ -1,7 +1,7 @@
 # AtomiControl
 three js Position / Transformation Controls
 # Usage
-...
+```...
 import { AtomiControl } from "../";
     ...
     this.control = new ArcballControls(this.camera, this.domElement);
@@ -26,3 +26,4 @@ import { AtomiControl } from "../";
     this.gizmo.update();
     ...
   }
+```
