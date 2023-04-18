@@ -217,8 +217,8 @@ class ControlEvents extends Object3D {
     } else {
       const rect = this.domElement.getBoundingClientRect();
       return {
-        x: e.clientX / rect.width * 2 - 1,
-        y: - e.clientY / rect.height * 2 + 1,
+        x: (e.clientX - rect.left) / rect.width * 2 - 1,
+        y: - (e.clientY - rect.top) / rect.height * 2 + 1,
         // for setFromCamera have no effect because setFromCamera( has coords.x and coords.y only ...)
         // but for unproject z is strongly! see move proc
         z: this.getScreenZ(this.camera),
