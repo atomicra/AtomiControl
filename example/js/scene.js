@@ -45,6 +45,8 @@ class Gl {
     this.control.dampingFactor = 15;
     this.control.wMax = 35;	//maximum angular velocity allowed
 
+    this.scene.add( new THREE.GridHelper( 2, 20, 0x888888, 0x444444 ) );
+
     let g = new THREE.BoxGeometry(0.5, 0.5, 0.5);
     let m = new THREE.MeshPhongMaterial({ wireframe: false, map: texture});
 
