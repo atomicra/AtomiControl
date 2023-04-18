@@ -283,7 +283,7 @@ class ControlEvents extends Object3D {
         this.startPointer = pointer;
 
         // if (delta < tapTreshold) return;
-        this.dispatchEvent({ type: onPointer, onChange: true });
+        // this.dispatchEvent({ type: onPointer, onChange: true });
         if (this.debug) console.log("onPointerMove");
         this.isTap = false;
         break;
